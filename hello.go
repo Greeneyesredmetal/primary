@@ -27,8 +27,15 @@ func (a admin) notify() {
 	fmt.Println("不允许查看管理员通知信息")
 }
 
+func sendnotification(n notifier) {
+	n.notify()
+}
+
 func main() {
 	fmt.Println("hello,world!")
 	bill := user{"Bill", "Bill@ink.com"}
-	bill.notify()
+	sendnotification(bill)
+
+	Mrwang := admin{"Wanglilan", "wll@ink.com"}
+	sendnotification(Mrwang)
 }
